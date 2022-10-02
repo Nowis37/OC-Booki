@@ -1,0 +1,38 @@
+html{
+    font-size: 100%;
+}
+
+*{
+    font-family: 'Raleway', arial;
+    padding: 0;
+    margin: 0;
+}
+
+#bloc_page{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.flex{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 992px) {
+    .flex{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    border-style:none
+}

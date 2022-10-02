@@ -1,0 +1,846 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
+#bloc_page{
+  overflow-x: hidden;
+}
+header, .UpperTitle, .searchForm, .Filters, .Info, section, .activity{ /* marge à gauche des élèments */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+/************************************
+      --- HEADER (Logo + Nav) ---              
+************************************/
+
+
+#container{ /* = HEADER */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ }
+
+header .logomain{
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+}
+
+nav{
+  display: flex;
+  margin-right: 30px; /* MARGE A DROITE DE L'ECRAN*/
+}
+nav .navlink{
+  font-size: 17px;
+  padding-top: 42px;
+  padding: 30px; /* le margin fait bugger les borders */
+  transition-duration: 0.1s; /* EFFET TRANSITION DE LA BAR BLEU */
+  border-top: 2px transparent solid; /* PERMET D'EVITER UN DECALAGE */
+  border-bottom: 2px transparent solid; /* IDEM */
+}
+nav .navlink[data-active=true]{
+  border-top: 2px #0065FC solid;
+  color: #0065FC;
+}
+nav .navlink:hover{
+  border-top: 2px #0065FC solid;
+  color: #0065FC;
+}
+
+
+/************************************
+      --- Phrases (sous HEADER : UpperTitle) ---              
+************************************/
+
+.UpperTitle > h1{
+  font-size: 26px;
+  margin: 20px 0 5px 0;
+}
+.UpperTitle > p{
+  font-size: 16px;
+  margin: 0 0 18px 0;
+}
+
+
+/************************************
+          --- BAR DE RECHERCHE / FORM SEARCH ---              
+************************************/
+
+.searchForm{
+  display: flex; /* BLOC A LA MÊME ECHELLE */
+}
+.searchFormIcon{ /* FORME ICONE LOC */
+  background-color: #F2F2F2;
+  padding: 15px 20px; /* PLACEMENT DE L'ICONE DANS LE BLOC */
+  border-radius: 15px 0 0 15px; /* BORDURE ARRONDI A GAUCHE */
+  font-size: 20px;
+}
+.searchFormSearchInput{ /* FORME RECHERCHE TEXTUELLE */
+  border: none; /* ENLEVER LES BORDURES DE BASE POUR MODIF */
+  border-top: lightgray 1.5px solid; /* BORDURE HAUT */
+  border-bottom: lightgray 1.5px solid;
+  padding: 0 10px; /* 0= hauteur / 10px=démarrage à gauche de 10px */
+  width: 230px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.searchFormSubmitInput{ /* FORME BOUTON RECHERCHER */
+  border: none;
+  border-radius: 0 17px 17px 0; /* BORDURE ARRONDI A DROITE */
+  padding: 0 25px; /* TAILLE */
+  background-color: #0065FC;
+  color: white;
+  font-weight: bold;
+  cursor: pointer; /* QUAND ON PASSE LA SOURIS DESSUS CHANGEMENT */
+  font-size: 18px;
+}
+
+@media screen and (min-width: 993px) {
+  .searchFormSubmitInputIcon{
+    display: none;
+  }
+}
+
+/************************************
+        --- FILTRES (x4) ---              
+************************************/
+
+
+.Filters{
+  display: flex; /* FILTRES SUR LA MÊME LIGNE */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+.Filters .MainTitle{
+  margin: 0 20px 18px 0; /* ESPACEMENT ENTRE H2 et FILTRES */
+  font-size: 20px;
+  font-weight: bold;
+}
+.Filter{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Filters .NoWrap{
+  display:flex;
+}
+
+.FilterBox{
+  display: flex; /* ICON ET TEXTE SUR LA MÊME LIGNE */
+  align-items: center; /* ALIGNER PAR RAPPORT AU TITRE */
+  border: 2px solid lightgray;
+  width: auto;
+  height: 40px;
+  border-radius: 30px;
+  margin-right: 30px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.FilterBox:hover{
+  background-color: #f3f8ff;
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+} 
+.FilterIcon{ /* LA CLASS DE L'ICONE */
+  display: flex;
+  align-items: center; /* CENTRER PAR RAPPORT AU TEXTE */
+  justify-content: center; /* CENTRER PAR RAPPORT AU ROND QUI L'ENTOUR */
+  background-color: #DEEBFF;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  margin: -2px; /* SOIT LA TAILLE DE LA BORDURE DE BASE (AFIN DE LA RECOUVRIR) */
+}
+.FilterIcon .Icon{ /* SEULEMENT LE PETIT ICON */
+  color: #0065FC;
+  font-size: 18px;
+}
+.FilterTitle{
+  margin: 16px; /* PLACEMENT DU TEXTE */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+/************************************
+        --- LIGNE INFO ---              
+************************************/
+
+
+
+.Info{
+  margin-top: 25px;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.IconInfo{
+  border-radius: 100%;
+  border: gray 1.5px solid;
+  min-width: 24px;
+  min-height: 24px;
+  margin-right: 10px; 
+  color: #0065FC;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.fa-info{
+  margin-top: 4px;
+  margin-left: 9.5px;
+}
+
+
+/************************************
+--- HEBERGEMENT MARSEILLE (SECTION) ---              
+************************************/
+
+
+.HebergementMarseilleMainTitle{
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+.HebergementMarseillePlus{
+  width: auto;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p, h3{
+  color: black;
+}
+
+section{
+  z-index: 1;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 40px;
+  border-radius: 20px;
+  width: 65%; /* HORIZONTAL 61% de base */
+  height: auto;
+  background-color: #F2F2F2;
+  
+}
+section .image{
+  border: 2px solid #F2F2F2;
+  border-radius: 30px;  
+  cursor: pointer;
+  
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 28%;
+  height:fit-content; /* FIT-CONTENT = S'ADAPTE A LA PLACE QUE PRENDS LES CONTENUES DE LA DIV */
+  background: white;
+  box-shadow: 0 0 15px #0000003e; /* dernier chiffre défini la transparence ou non*/
+
+}
+
+.photo{
+  width: 100%;
+  height: 128px; /* HAUTEUR DE L'IMAGE :: Big up a l'équipe discord pour l'aide */
+  object-fit: cover;
+  border-radius: 24px 24px 0 0;
+}
+
+section > div:hover{
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+}
+section .fa-star{
+  color: #0065FC;
+  font-size: 14px;
+  width: 13px;
+}
+section .empty{
+  color: lightgray;
+}
+section .description{
+  margin-left: 11px;
+}
+section .description h3{
+  margin: 6px 0; /* Séparation entre éléments */
+  font-weight: bold;
+  font-size: 18px;
+}
+section .description p{
+  margin: 5px 0;
+  font-size: 16px;
+}
+section .description .fa-star{
+  margin: 8px 0;
+}
+
+
+
+/************************************
+        --- LES PLUS POPULAIRES (ASIDE) ---              
+************************************/
+
+
+
+aside{
+  z-index: 2;
+  margin-right: 20px;
+  width: 34%; /* 450px / 27% de base */
+  height: 700px; /* VERTICLE */
+  border-radius: 20px;
+  background-color: #F2F2F2;
+}
+aside .imagepop{
+  position: relative;
+  display: flex; /* ICON ET TEXTE SUR LA MÊME LIGNE */
+  flex-direction: row;
+  border: 2px solid #F2F2F2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+  height: 160px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0000003e;
+  background: white;
+  padding: 4px;
+  width: 82%; /* 370px et 90% DE BASE */
+}
+
+aside .imagepop:hover{
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+}
+.photopop{
+  width: 140px;
+  height: 160px; /* 150px de base / HAUTEUR DE L'IMAGE */
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+}
+
+aside .description{
+  margin-left: 20px;
+}
+aside .description h3{
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+aside .description p{
+  margin-top: 8px;
+}
+
+aside .imagepop .fa-star{
+  color: #0065FC;
+  font-size: 14px;
+  width: 13px;
+  margin-top: 10%;
+  }
+
+aside .black{
+  color: black;
+  font-size: 24px;
+}
+aside .empty{
+  color: lightgray;
+}
+.LesPlusPopulaireMainTitle{
+  width: 100%;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+
+
+/************************************
+        --- ACTIVITES MARSEILLES (.ACTIVITY) ---              
+************************************/
+
+
+
+.activity{
+  display: grid;
+  column-gap: 30px; /* écart entre les modules */
+  margin-top: 64px; /* écart TOP et BOTTOM */
+  margin-bottom: 64px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 192px 32px 32px 32px 192px;
+  /*               m-top|p-top|espacement module/m-bottom*/
+}
+
+.ActivitesMarseilleMainTitle{
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.ActivityBloc{ /* Composition du bloc (all elements) */
+  box-shadow: 0 0 20px #0000003e;
+  border-radius: 20px;
+  overflow: hidden; /* obligatoire pour le border-radius */
+  display: flex; /* affichage du texte */
+  flex-direction: column;
+}
+.ActivityImg{ /* SET LES IMAGES DANS LA BONNE DEF */
+  position: relative; /* SET LES IMAGES DANS LES BLOCS */
+  flex: 1; /* PRENDRE LE DESSUS SUR LE TEXTE */
+}
+.ActivityImgImg{
+  position: absolute; /* IMPORTANT POUR SET LE NOM DU LIEUX */
+  height: 100%; /* HEIGHT & WIDHT pour que l'image puisse prendre le max de dimension */
+  width: 100%;
+  object-fit: cover;
+}
+.ActivityCardTitle{ 
+  margin: 20px 20px;
+  font-weight: bold;
+}
+
+@media (min-width: 993px) { /* OBLIGER SINON PREND LE DESSUS SUR LES VERSIONS TEL ET TABLETTE */
+
+  /* grid-row = quel row ça commence / (sur) quel row ça finis */
+  /* grid-row: 1/1 réservé au titre "Activité..."
+  /* Donc les blocs commence à 2/x; x/7 étant le max */
+
+  .ActivityBloc1 {
+    grid-row: 2/7;
+  }
+  .ActivityBloc2 {
+    grid-row: 2/5;
+  }
+  .ActivityBloc3 {
+    grid-row: 6/7;
+  }
+  .ActivityBloc4 {
+    grid-row: 2/7;
+  }
+  .ActivityBloc5 {
+    grid-row: 2/3;
+  }
+  .ActivityBloc6 {
+    grid-row: 4/7; 
+  }
+}
+
+.ActivityBloc:hover{
+  transform: scale(1.03);
+  transition-duration: 0.2s;
+}
+
+
+
+/************************************
+          --- FOOTER ---              
+************************************/
+
+
+footer{
+  width: auto;
+  height: auto;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: start;
+}
+footer h3{
+  margin-top: 40px;
+  font-weight: bold;
+}
+footer p{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.p1{
+  margin-left: 40px;
+}
+.p1,.p2{
+  margin-right: 18%;
+}
+
+
+/************************************
+          
+
+  --- RESPONSIVE DESIGN - TABLETTE ---              
+
+
+************************************/
+
+
+
+
+
+@media screen and (max-width: 992px) {
+
+
+/************************************
+      --- HEADER (Logo + Nav) ---              
+************************************/
+
+  header .logomain {
+    height: 60px;
+  }
+
+  header .navlink {
+    border-top: none;
+    border-top: 3px solid #F2F2F2;
+    align-items: center;
+    text-align: center;
+  }
+
+
+/************************************
+          --- FORM SEARCH ---              
+************************************/
+
+  .searchFormSubmitInputText{
+    display: none;
+  }
+  .searchFormSearchInput{ /* FORME RECHERCHE TEXTUELLE */
+    width: 30%;
+  }
+
+
+/************************************
+        --- FILTRES (x4) ---              
+************************************/
+
+
+/************************************
+        --- LIGNE INFO ---              
+************************************/
+
+
+/************************************
+--- HEBERGEMENT MARSEILLE (SECTION) ---              
+************************************/
+
+section{
+  display: flex;
+  flex-direction: row;
+  width: 100%; 
+  height: auto;
+  margin: 0;
+  order: 1;
+  background-color: transparent;
+}
+section .image{
+  margin-top: 40px;
+  width: 45%;
+  height: auto;
+}
+.photo{
+  height: 150px; /* HAUTEUR DE L'IMAGE */
+}
+section .description h3{
+  margin-left: 20px;
+  margin: 8px 0; /* Séparation entre éléments */
+}
+.HebergementMarseilleMainTitle{
+  position: absolute;
+  margin: 0;
+  margin-left: 20px;
+  margin-top: -5px;
+}
+.HebergementMarseillePlus{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+
+/************************************
+        --- LES PLUS POPULAIRES (ASIDE) ---              
+************************************/
+/*#bloc_page{
+  overflow-x: hidden;
+}*/
+  aside{
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    order: 2;
+  }
+  aside .imagepop{
+    width: 80%;
+    height: 150px;
+    margin: 8px auto 0 auto;
+  }
+  aside .imagepop:last-child{
+    margin-bottom: 35px;
+  }
+  aside br{
+    display: none;
+  }
+  .photopop{
+    width: 260px;
+    height: 150px;
+  }
+  .LesPlusPopulaireMainTitle{
+    margin-left: 40px;
+    margin-top: 35px; 
+    margin-bottom: 35px;
+  }
+
+
+/************************************
+        --- ACTIVITES MARSEILLES (.ACTIVITY) ---              
+************************************/
+
+  .activity {
+    margin-top: 100px;
+    row-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 192px 192px 192px; /* LARGEUR DU ROW */
+  }
+
+  .ActivitesMarseilleMainTitle{
+    position: absolute;
+    margin-top: -65px;
+    font-weight: bold;
+  }
+
+
+/************************************
+          --- FOOTER ---              
+************************************/
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: #F2F2F2;
+  }
+
+  footer .p1, .p2, .p3{
+    margin-left: 20px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************
+          
+
+  --- RESPONSIVE DESIGN - SMARTPHONE ---              
+
+
+************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+  /************************************
+      --- HEADER (Logo + Nav) ---              
+************************************/
+
+  header{
+    margin: 0;
+  }
+  header .logomain{
+    margin: auto;
+  }
+  header nav {
+    min-width: 100%;
+  }
+  header .navlink {
+    border-top: none;
+    padding-top: 20px;
+    padding: 18px;
+    border-bottom: 3px solid #F2F2F2;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  header .navlink[data-active=true] {
+    border-top: none; 
+    border-bottom-color: #0065FC;
+  }
+  header .navlink:hover {
+    border-top: none;
+    border-bottom-color: #0065FC;
+  }
+  .UpperTitle > h1{
+    font-size: 20px;
+  }
+  .UpperTitle > p{
+    font-size: 14px;
+  }
+
+ /************************************
+          --- FORM SEARCH ---              
+************************************/
+
+  .searchForm{
+    margin: 5%;
+    }
+
+/************************************
+        --- FILTRES (x4) ---              
+************************************/
+
+.FilterBox{
+  margin-right: 15px;
+}
+.FilterTitle{
+  font-size: 14px;
+}
+
+/************************************
+        --- LIGNE INFO ---              
+************************************/
+
+
+/************************************
+        --- LES PLUS POPULAIRES (ASIDE) ---              
+************************************/
+
+  aside{
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+    order: 1;
+  }
+  aside .imagepop{
+    flex-direction: column;
+    width: 90%;
+    border: 2px solid #F2F2F2;
+  }
+
+  aside > div{
+    width: 100%;
+  }
+  .photopop{
+    width: 37%;
+    height: 150px; /* HAUTEUR DE L'IMAGE :: Big up a l'équipe discord pour l'aide */
+  }
+  aside .description{
+    position: absolute;
+    margin-left: 40%;
+  }
+  aside .description h3{
+    margin-top: 15px;
+  }
+
+  .LesPlusPopulaireMainTitle{
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+/************************************
+--- HEBERGEMENT MARSEILLE (SECTION) ---              
+************************************/
+
+section{
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  height: auto;
+  margin: auto;
+  order: 2;
+}
+
+section .image{
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 25px;
+}
+section .description h3{
+  margin-left: 20px;
+  margin: 7px 0; /* Séparation entre éléments */
+  font-size: 20px;
+}
+section .description p{
+  font-size: 18px;
+}
+.HebergementMarseilleMainTitle{
+  margin-left: 20px;
+  margin-top: -20px;
+  font-size: 22px;
+}
+.HebergementMarseillePlus{
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+/************************************
+        --- ACTIVITES MARSEILLES (.ACTIVITY) ---              
+************************************/
+
+  .ActivitesMarseilleMainTitle { /* PROBLEME COORD TITRE */ 
+    margin-bottom: 40px;
+    margin-left: 5px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .activity {
+    margin: auto;
+    height: auto;
+    margin-top: 80px;
+    row-gap: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 192px 192px 192px 192px 192px 192px 16px; /* LAST VALUE M-BOTTOM */
+    width: 90%;
+  }
+
+/************************************
+          --- FOOTER ---              
+************************************/
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 500px;
+    background-color: #F2F2F2;
+  }
+
+}
